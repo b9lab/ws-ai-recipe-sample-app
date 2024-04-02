@@ -41,7 +41,9 @@ export default function Home() {
   const onClickReceipePrompt = async () => {
     setResponse("");
     let prompt = "I have the following ingredients:\n";
-    ingredients.forEach((ingredient) => (prompt += `* ${ingredient}\n`));
+    ingredients.forEach(
+      (ingredient, index) => (prompt += `${index + 1}. ${ingredient}\n`)
+    );
     prompt +=
       "Please list all dishes I could cook with these ingredients as a list";
     setIngredients([]);
