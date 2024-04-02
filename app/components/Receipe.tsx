@@ -45,7 +45,7 @@ export default function Receipe(props: ReceipeProps) {
         value={input}
         onChange={onChange}
       />
-      <button className="block" onClick={onClickAddIngredient}>
+      <button className="block mt-2" onClick={onClickAddIngredient}>
         Add
       </button>
       <button className="my-2" onClick={props.onClickPrompt}>

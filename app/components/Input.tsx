@@ -1,4 +1,4 @@
-import { Dispatch, FormEvent, SetStateAction } from "react";
+import { Dispatch, FormEvent, SetStateAction, useRef } from "react";
 
 interface InputProps {
   setInput: Dispatch<SetStateAction<string>>;
@@ -7,14 +7,21 @@ interface InputProps {
 }
 
 export default function Input(props: InputProps) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   const onChange = (e: FormEvent<HTMLTextAreaElement>) => {
     e.currentTarget.style.height = "0";
     e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
+    if (buttonRef) {
+      buttonRef.current!.style.height = "0";
+      buttonRef.current!.style.height = e.currentTarget.scrollHeight + "px";
+    }
+
     props.setInput(e.currentTarget.value);
   };
 
   return (
-    <div className="mt-auto">
+    <div className="mt-auto flex justify-center">
       <textarea
         className="w-9/12 h-10"
         placeholder="Give your input here"
@@ -22,7 +29,11 @@ export default function Input(props: InputProps) {
         value={props.input}
         onChange={onChange}
       />
-      <button className="w-2/12 ml-5 h-10" onClick={props.onClickPrompt}>
+      <button
+        ref={buttonRef}
+        className="w-2/12 ml-5 h-10 self-center"
+        onClick={props.onClickPrompt}
+      >
         Send
       </button>
     </div>
