@@ -7,7 +7,7 @@ import html from "remark-html";
 
 import Response from "./components/Response";
 import Settings from "./components/Settings";
-import Receipe from "./components/Receipe";
+import Recipe from "./components/Recipe";
 import Input from "./components/Input";
 import { getAiRespone } from "./aiFunctions";
 
@@ -17,7 +17,7 @@ export default function Home() {
   const [lastInput, setLastInput] = useState("");
   const [response, setResponse] = useState("");
 
-  // receipe
+  // Recipe
   const [ingredients, setIngredients] = useState<string[]>([]);
 
   const onClickPrompt = async () => {
@@ -38,8 +38,8 @@ export default function Home() {
     setInput("");
   };
 
-  // receipe
-  const onClickReceipePrompt = async () => {
+  // Recipe
+  const onClickRecipePrompt = async () => {
     setResponse("");
     let prompt = "I have the following ingredients:\n";
     ingredients.forEach(
@@ -55,14 +55,14 @@ export default function Home() {
 
   return (
     <main className="h-[100vh] px-12 flex flex-col">
-      <h1>Receipe Sample App</h1>
+      <h1>Recipe Sample App</h1>
       <Settings setAiModel={setAiModel} aiModel={aiModel} />
       <hr />
-      {/* receipe */}
-      <Receipe
+      {/* recipe */}
+      <Recipe
         setIngredients={setIngredients}
         ingredients={ingredients}
-        onClickPrompt={onClickReceipePrompt}
+        onClickPrompt={onClickRecipePrompt}
       />
       <hr />
       <Response inputHtml={lastInput} responseHtml={response} />

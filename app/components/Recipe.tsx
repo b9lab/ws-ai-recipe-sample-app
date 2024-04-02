@@ -1,12 +1,12 @@
 import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 
-interface ReceipeProps {
+interface RecipeProps {
   setIngredients: Dispatch<SetStateAction<string[]>>;
   ingredients: string[];
   onClickPrompt: () => Promise<void>;
 }
 
-export default function Receipe(props: ReceipeProps) {
+export default function Recipe(props: RecipeProps) {
   const [input, setInput] = useState("");
 
   const onChange = (e: FormEvent<HTMLInputElement>) => {
@@ -29,7 +29,7 @@ export default function Receipe(props: ReceipeProps) {
 
   return (
     <div className="py-2">
-      <h2>Receipe</h2>
+      <h2>Recipe</h2>
       <ul className="pl-4 list-disc pb-2">
         {props.ingredients.map((ingredient, index) => (
           <li>
