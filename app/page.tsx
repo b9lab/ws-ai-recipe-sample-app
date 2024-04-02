@@ -38,6 +38,7 @@ export default function Home() {
     setInput("");
   };
 
+  // receipe
   const onClickReceipePrompt = async () => {
     setResponse("");
     let prompt = "I have the following ingredients:\n";
@@ -57,6 +58,7 @@ export default function Home() {
       <h1>Receipe Sample App</h1>
       <Settings setAiModel={setAiModel} aiModel={aiModel} />
       <hr />
+      {/* receipe */}
       <Receipe
         setIngredients={setIngredients}
         ingredients={ingredients}
