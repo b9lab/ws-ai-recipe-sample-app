@@ -3,7 +3,7 @@ import { Dispatch, FormEvent, SetStateAction } from "react";
 interface InputProps {
   setInput: Dispatch<SetStateAction<string>>;
   input: string;
-  btnOnClick: () => Promise<void>;
+  onClickPrompt: () => Promise<void>;
 }
 
 export default function Input(props: InputProps) {
@@ -16,16 +16,13 @@ export default function Input(props: InputProps) {
   return (
     <div className="mt-auto">
       <textarea
-        className="w-9/12 h-10 bg-zinc-300 rounded-md text-zinc-900 p-2"
+        className="w-9/12 h-10"
         placeholder="Give your input here"
         id="input"
         value={props.input}
         onChange={onChange}
       />
-      <button
-        className="w-2/12 ml-5 h-10 p-2 rounded-md bg-zinc-950"
-        onClick={props.btnOnClick}
-      >
+      <button className="w-2/12 ml-5 h-10" onClick={props.onClickPrompt}>
         Send
       </button>
     </div>

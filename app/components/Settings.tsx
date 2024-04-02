@@ -12,12 +12,8 @@ export default function Settings(props: SettingsProps) {
 
   return (
     <div className="py-5">
-      <h2 className="text-xl py-2">Model</h2>
-      <select
-        value={props.aiModel}
-        onChange={onChange}
-        className="bg-zinc-300 rounded-md text-zinc-900 p-2"
-      >
+      <h2>Model</h2>
+      <select value={props.aiModel} onChange={onChange}>
         <option value="openai">Openai</option>
         <option value="gemini">Gemini</option>
       </select>
