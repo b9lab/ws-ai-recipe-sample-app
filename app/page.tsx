@@ -7,7 +7,7 @@ import html from "remark-html";
 
 import Response from "./components/Response";
 import Settings from "./components/Settings";
-import Recipe from "./components/Recipe";
+import IngredientsList from "./components/IngredientsList";
 import Input from "./components/Input";
 import { getAiRespone } from "./aiFunctions";
 
@@ -59,7 +59,7 @@ export default function Home() {
       <Settings setAiModel={setAiModel} aiModel={aiModel} />
       <hr />
       {/* recipe */}
-      <Recipe
+      <IngredientsList
         setIngredients={setIngredients}
         ingredients={ingredients}
         onClickPrompt={onClickRecipePrompt}

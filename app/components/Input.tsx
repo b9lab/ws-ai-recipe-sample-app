@@ -21,7 +21,7 @@ export default function Input(props: InputProps) {
   };
 
   return (
-    <div className="mt-auto flex justify-center">
+    <div className="mt-auto flex justify-center my-2">
       <textarea
         className="w-9/12 h-10"
         placeholder="Give your input here"
@@ -31,7 +31,7 @@ export default function Input(props: InputProps) {
       />
       <button
         ref={buttonRef}
-        className="w-2/12 ml-5 h-10 self-center"
+        className="w-2/12 ml-5 h-10 self-center bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 border border-blue-700 rounded"
         onClick={props.onClickPrompt}
       >
         Send

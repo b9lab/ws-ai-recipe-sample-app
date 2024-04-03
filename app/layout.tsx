@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Receipe Sample App",
+  title: "Recipe Sample App",
   description: "Sample app for demonstrating the usage of OpenAI / Gemini",
 };
 

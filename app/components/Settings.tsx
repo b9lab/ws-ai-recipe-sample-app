@@ -13,7 +13,7 @@ export default function Settings(props: SettingsProps) {
   return (
     <div className="py-5">
       <h2>Model</h2>
-      <select value={props.aiModel} onChange={onChange}>
+      <select value={props.aiModel} onChange={onChange} className="px-12">
         <option value="openai">Openai</option>
         <option value="gemini">Gemini</option>
       </select>
